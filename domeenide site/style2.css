@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+
+body {
+    background-image: url('sky.jpg');
+    background-size: cover;
+    background-position: center center;
+    color: #ffffff;
+    font-family: "Londrina Solid", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    color: #112955;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.25rem;
+    text-align: center;
+    color: #112955;
+}
+
+.content-background {
+    background: rgba(255, 255, 255, 0.8); /* Белый фон с прозрачностью */
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.registration-form .form-label {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.registration-form .form-control {
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.registration-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #FFD900;
+    border: none;
+    color: #20537D;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.registration-form button:hover {
+    background-color: #153B53;
+    color: white;
+}
+
+#confirmationMessage {
+    font-size: 1.5rem;
+    color: #FFD900;
+}
+
+#confirmationMessage a {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #20537D;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#confirmationMessage a:hover {
+    background-color: #153B53;
+}

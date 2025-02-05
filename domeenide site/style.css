@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+
+body {
+    background-image: url('sky.jpg'); /* Устанавливаем изображение фона */
+    background-size: cover; /* Охватывает весь экран */
+    background-position: center center; /* Центрируем изображение */
+    color: #ffffff;
+    font-family: "Londrina Solid", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 4rem;
+    color: #112955;
+    margin: 0;
+}
+
+p {
+    font-size: 1.25rem;
+    color: #010c25;
+}
+
+.btn-primary {
+    background: rgb(255, 217, 0);
+    border: purple;
+    color: #20537D;
+}
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active,
+.btn:hover {
+    background-color: rgb(163, 165, 48);
+    color: #20537D;
+}
+.domain-search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.domain-search-form input {
+    width: 80%;
+    padding: 10px;
+    font-size: 1.25rem;
+}
+
+.domain-search-form button {
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    background-color: #20537D;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.domain-search-form button:hover {
+    background-color: #153B53;
+}
+
+#searchResultContainer {
+    font-size: 1.25rem;
+    color: #000000;
+    text-align: center;
+}
+
+.domain-list-container {
+    margin-top: 20px;
+    display: none;
+    background-color: #20537D;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.domain-list-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.domain-list-container ul li {
+    padding: 5px 0;
+    color: white;
+}
+
+.domain-button {
+    background-color: #20537D;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    text-align: left;
+}
+
+.domain-button:hover {
+    background-color: #153B53;
+}
+
+/* Стили для элементов списка доступных доменов */
+.domain-item {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.domain-item:hover {
+    background-color: #20537D;
+    color: white;
+}
+
+/* Центрируем весь блок */
+.hero {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Чтобы все было по центру экрана */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Белый полупрозрачный фон для всего контента */
+.content-background {
+    background: rgba(255, 255, 255, 0.8); /* Белый фон с прозрачностью */
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
