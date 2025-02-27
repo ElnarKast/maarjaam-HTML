@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Minu domeeni registreerimise leht</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="min-vh-100 d-flex align-items-center justify-content-center">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <!-- Основной контент (левая колонка) -->
+                <div class="col-lg-8">
+                    <div class="card shadow content-background">
+                        <div class="card-body p-4 p-md-5">
+                            <!-- Step indicators -->
+                            <div class="mb-5">
+                                <div class="position-relative">
+                                    <div class="progress" style="height: 3px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 66%;"
+                                            aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="position-absolute top-0 start-0 translate-middle step-indicator active" id="step1">
+                                        1
+                                        <span>Otsi</span>
+                                    </div>
+                                    <div class="position-absolute top-0 start-50 translate-middle step-indicator active" id="step2">
+                                        2
+                                        <span>Kontaktandmed</span>
+                                    </div>
+                                    <div class="position-absolute top-0 end-0 translate-middle step-indicator" id="step3">
+                                        3
+                                        <span>Kasuta</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center mb-4">
+                                <h1 class="display-4 fw-bold">Registreeri oma domeen</h1>
+                            </div>
+                            
+                            <!-- Domain selection box -->
+                            <div class="domain-selection-box mb-4">
+                                <div class="card border-primary">
+                                    <div class="card-body">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-8">
+                                                <h5 class="card-title fs-4" id="selectedDomain">example.com</h5>
+                                                <div class="domain-price">
+                                                    <span class="fs-5 text-primary fw-bold" id="domainPrice">12.99€</span> 
+                                                    <span class="text-muted">/ aasta</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                                <button type="button" class="btn btn-danger" onclick="removeDomain()">
+                                                    <i class="fas fa-trash me-2"></i> Eemalda
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="registration-form">
+                                <form id="domainForm" class="needs-validation" novalidate>
+                                    <div class="row g-3">
+                                        <div class="col-12 mb-3">
+                                            <label for="userName" class="form-label">Teie nimi</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                <input type="text" class="form-control" id="userName" required 
+                                                    placeholder="Sisestage oma nimi">
+                                                <div class="invalid-feedback">
+                                                    Palun sisestage oma nimi.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-12 mb-3">
+                                            <label for="email" class="form-label">Teie e-post</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                                <input type="email" class="form-control" id="email" required 
+                                                    placeholder="Sisestage oma e-post">
+                                                <div class="invalid-feedback">
+                                                    Palun sisestage kehtiv e-posti aadress.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-12 mb-3">
+                                            <label for="password" class="form-label">Salasõna</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                                <input type="password" class="form-control" id="password" required 
+                                                    placeholder="Sisestage oma salasõna">
+                                                <div class="invalid-feedback">
+                                                    Palun sisestage salasõna.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-12 mb-4">
+                                            <label for="confirmPassword" class="form-label">Korda salasõna</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                                <input type="password" class="form-control" id="confirmPassword" required 
+                                                    placeholder="Korda salasõna">
+                                                <div class="invalid-feedback">
+                                                    Salasõnad ei ühti!
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                                <i class="fas fa-check-circle me-2"></i>Registreeri domeen
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div id="confirmationMessage" class="mt-4 text-center d-none">
+                                <div class="py-4">
+                                    <div class="mb-4">
+                                        <i class="fas fa-check-circle text-success" style="font-size: 4rem;"></i>
+                                    </div>
+                                    <h2 class="display-6 fw-bold">Õnnitleme!</h2>
+                                    <p class="lead">Teie domeen on edukalt registreeritud!</p>
+                                    <p id="registeredDomain" class="fs-4 fw-bold text-primary mb-4"></p>
+                                    <p>Täname, et valisite meie teenuse!</p>
+                                    <a href="index.html" class="btn btn-primary btn-lg mt-3">
+                                        <i class="fas fa-home me-2"></i>Tagasi esilehele
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Новое окно с ценой (правая колонка) -->
+                <div class="col-lg-4 mt-4 mt-lg-0 d-none d-lg-block">
+                    <div class="card shadow content-background price-sidebar" id="priceSidebar">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-4"><i class="fas fa-tags me-2"></i>Domeeni hind</h3>
+                            <div class="domain-summary mb-4">
+                                <p class="mb-1">Valitud domeen:</p>
+                                <h4 id="sidebarDomain" class="fw-bold text-primary mb-3">example.com</h4>
+                                
+                                <div class="price-details">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Registreerimistasu:</span>
+                                        <span id="sidebarPrice" class="fw-bold">12.99€</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Käibemaks (20%):</span>
+                                        <span id="taxAmount" class="fw-bold">2.60€</span>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="fs-5">Kokku:</span>
+                                        <span id="totalPrice" class="fs-5 fw-bold text-primary">15.59€</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="domain-features">
+                                <h5 class="mb-3"><i class="fas fa-check-circle me-2 text-success"></i>Hinna sisse kuulub:</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check me-2 text-success"></i>1 aasta registreerimine</li>
+                                    <li class="mb-2"><i class="fas fa-check me-2 text-success"></i>E-posti edastamine</li>
+                                    <li class="mb-2"><i class="fas fa-check me-2 text-success"></i>WHOIS kaitse</li>
+                                    <li class="mb-2"><i class="fas fa-check me-2 text-success"></i>DNS haldamine</li>
+                                    <li class="mb-2"><i class="fas fa-check me-2 text-success"></i>24/7 tugi</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="promotion-banner mt-4 p-3 bg-light rounded">
+                                <p class="mb-1"><i class="fas fa-gift me-2 text-primary"></i><strong>Eriline pakkumine!</strong></p>
+                                <p class="mb-0 small">Registreerides täna, saate tasuta SSL sertifikaadi esimeseks aastaks!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Function to update progress bar and indicators
+        function updateStepIndicator(step) {
+            var indicators = document.querySelectorAll('.step-indicator');
+            var progressBar = document.querySelector('.progress-bar');
+            
+            // Update progress bar
+            progressBar.style.width = (step * 33) + '%';
+            progressBar.setAttribute('aria-valuenow', step * 33);
+            
+            // Update indicators
+            indicators.forEach(function (indicator, index) {
+                if (index < step) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        function getDomainFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('domain');
+        }
+
+        function getDomainPrice(domain) {
+            // Simple pricing logic based on domain extension
+            if (domain.endsWith('.com')) return '14.99';
+            if (domain.endsWith('.ee')) return '18.99';
+            if (domain.endsWith('.net')) return '12.99';
+            if (domain.endsWith('.org')) return '13.99';
+            return '9.99'; // Default price
+        }
+
+        function calculateTaxAndTotal(price) {
+            // Calculate 20% VAT
+            const priceNum = parseFloat(price);
+            const tax = (priceNum * 0.2).toFixed(2);
+            const total = (priceNum + parseFloat(tax)).toFixed(2);
+            
+            // Update sidebar values
+            document.getElementById('taxAmount').textContent = tax + '€';
+            document.getElementById('totalPrice').textContent = total + '€';
+        }
+
+        function displayDomain() {
+            const domain = getDomainFromUrl();
+            if (domain) {
+                const price = getDomainPrice(domain);
+                
+                // Update main content domain info
+                document.getElementById('selectedDomain').textContent = domain;
+                document.getElementById('domainPrice').textContent = price + '€';
+                document.getElementById('registeredDomain').textContent = domain;
+                
+                // Update sidebar domain info
+                document.getElementById('sidebarDomain').textContent = domain;
+                document.getElementById('sidebarPrice').textContent = price + '€';
+                
+                // Calculate and display tax and total
+                calculateTaxAndTotal(price);
+            } else {
+                // Redirect back to search page if no domain selected
+                window.location.href = "index.html";
+            }
+            updateStepIndicator(2); // Move to step 2
+        }
+
+        function removeDomain() {
+            var modalEl = document.createElement('div');
+            modalEl.innerHTML = `
+                <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="confirmModalLabel">Kinnita tegevus</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Kas soovite kindlasti domeeni eemaldada?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tühista</button>
+                                <button type="button" class="btn btn-danger" id="confirmRemove">
+                                    <i class="fas fa-trash me-2"></i>Eemalda
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modalEl);
+            
+            var modal = new bootstrap.Modal(document.getElementById('confirmModal'));
+            modal.show();
+            
+            document.getElementById('confirmRemove').addEventListener('click', function() {
+                window.location.href = "index.html";
+            });
+            
+            document.getElementById('confirmModal').addEventListener('hidden.bs.modal', function() {
+                setTimeout(() => {
+                    modalEl.remove();
+                }, 500);
+            });
+        }
+
+        // Form validation and submission
+        document.getElementById('domainForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            const form = event.currentTarget;
+            const userName = document.getElementById('userName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (!form.checkValidity()) {
+                event.stopPropagation();
+                form.classList.add('was-validated');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPassword').setCustomValidity('Salasõnad ei ühti!');
+                form.classList.add('was-validated');
+                return;
+            } else {
+                document.getElementById('confirmPassword').setCustomValidity('');
+            }
+
+            if (userName && email && password) {
+                document.querySelector('.registration-form').classList.add('d-none');
+                document.querySelector('.domain-selection-box').classList.add('d-none');
+                document.getElementById('confirmationMessage').classList.remove('d-none');
+                
+                // Скрываем боковую панель при успешной регистрации
+                const priceSidebar = document.getElementById('priceSidebar');
+                if (priceSidebar) {
+                    priceSidebar.classList.add('d-none');
+                }
+                
+                updateStepIndicator(3); // Move to step 3 after registration
+            }
+        });
+
+        window.onload = displayDomain;
+    </script>
+</body>
+
+</html>

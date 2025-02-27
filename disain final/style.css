@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap');
+
+body {
+    background-image: url('sky.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #000000;
+    font-family: "Londrina Solid", sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 900;
+    color: #112955;
+}
+
+p {
+    color: #010c25;
+}
+
+.btn-primary {
+    background: rgb(255, 217, 0);
+    border: none;
+    color: #20537D;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active,
+.btn:hover {
+    background-color: rgb(163, 165, 48);
+    color: #20537D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Content background */
+.content-background {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Step indicators styling */
+.step-indicator {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 5;
+}
+
+.step-indicator.active {
+    background-color: #4CAF50;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+/* Text below indicators */
+.step-indicator span {
+    font-size: 1.4rem;
+    position: absolute;
+    bottom: -25px;
+    white-space: nowrap;
+    font-weight: normal;
+}
+
+/* Domain list styling */
+.list-group-item {
+    transition: all 0.3s ease;
+    border-left: 0;
+    border-right: 0;
+}
+
+.list-group-item:first-child {
+    border-top: 0;
+}
+
+.list-group-item:last-child {
+    border-bottom: 0;
+}
+
+.list-group-item:hover {
+    background-color: rgba(32, 83, 125, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Domain selection box styling */
+.domain-selection-box .card {
+    transition: all 0.3s ease;
+}
+
+.domain-selection-box .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Form styling */
+.form-control:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+}
+
+.input-group-text {
+    background-color: rgb(255, 217, 0);
+    color: #20537D;
+    border-color: rgb(255, 217, 0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .step-indicator {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .step-indicator span {
+        font-size: 0.7rem;
+        bottom: -20px;
+    }
+}
+/* Стили для правого окна с ценой */
+.price-sidebar {
+    position: sticky;
+    top: 20px;
+}
+
+.price-sidebar .card-title {
+    color: #112955;
+}
+
+.price-sidebar .domain-features i {
+    font-size: 0.8rem;
+}
+
+.promotion-banner {
+    border-left: 4px solid rgb(255, 217, 0);
+    background-color: rgba(255, 217, 0, 0.1) !important;
+}
+
+@media (max-width: 992px) {
+    .price-sidebar {
+        margin-top: 2rem;
+    }
+}
